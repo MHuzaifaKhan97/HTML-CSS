@@ -1,0 +1,9 @@
+C:\Users\Huzaifa\Desktop\myTextEditor\myTextEditor\bin\Debug\myTextEditor.exe.config
+C:\Users\Huzaifa\Desktop\myTextEditor\myTextEditor\bin\Debug\myTextEditor.exe
+C:\Users\Huzaifa\Desktop\myTextEditor\myTextEditor\bin\Debug\myTextEditor.pdb
+C:\Users\Huzaifa\Desktop\myTextEditor\myTextEditor\obj\Debug\myTextEditor.csprojResolveAssemblyReference.cache
+C:\Users\Huzaifa\Desktop\myTextEditor\myTextEditor\obj\Debug\myTextEditor.Form1.resources
+C:\Users\Huzaifa\Desktop\myTextEditor\myTextEditor\obj\Debug\myTextEditor.Properties.Resources.resources
+C:\Users\Huzaifa\Desktop\myTextEditor\myTextEditor\obj\Debug\myTextEditor.csproj.GenerateResource.Cache
+C:\Users\Huzaifa\Desktop\myTextEditor\myTextEditor\obj\Debug\myTextEditor.exe
+C:\Users\Huzaifa\Desktop\myTextEditor\myTextEditor\obj\Debug\myTextEditor.pdb

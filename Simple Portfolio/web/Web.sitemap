@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="Login.aspx" title="Login"  description="">
+        <siteMapNode url="Home.aspx" title="HOME"  description="" />
+      
+        <siteMapNode url="Rooms.aspx" title="ROOMS &amp; SUITS"  description="" >
+            <siteMapNode url="Panorama.aspx" title="Panorama Rooms"  description="" />
+            <siteMapNode url="Prime.aspx" title="Prime Rooms"  description="" />
+            <siteMapNode url="Deluxe.aspx" title="Deluxe Rooms"  description="" />
+        </siteMapNode>
+             
+        <siteMapNode url="Banquet.aspx" title="BANQUET"  description="" >
+            <siteMapNode url="Coronet.aspx" title="Coronet Hall"  description="" />
+            <siteMapNode url="Crown.aspx" title="Crown Hall"  description="" />
+            <siteMapNode url="Kohinoor.aspx" title="Kohinoor Ballroom"  description="" />
+            <siteMapNode url="Pool.aspx" title="Pool Palm"  description="" />
+        </siteMapNode>  
+      
+        <siteMapNode url="Restaurant.aspx" title="RESTAURANTS"  description="" >
+           <siteMapNode url="Aroma.aspx" title="Aroma"  description="" /> 
+        </siteMapNode>    
+    
+        <siteMapNode url="Services.aspx" title="SERVICES"  description="" />
+    
+        <siteMapNode url="Leisure.aspx" title="LEISURE &amp; RECREATIONAL ACTIVITIES"  description="" />
+    </siteMapNode>
+</siteMap>

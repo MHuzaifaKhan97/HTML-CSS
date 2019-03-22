@@ -1,0 +1,9 @@
+﻿body {
+    margin:0px;
+    padding:0px;
+}
+#register{
+    background-color:slategrey;
+    width:45%;
+    height:150px;
+}

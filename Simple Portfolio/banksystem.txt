@@ -1,0 +1,1141 @@
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.Border;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+
+import javafx.stage.StageStyle;
+
+public class Main extends Application {
+
+	@Override
+	public void start(Stage MainStage) throws Exception {
+	
+		MainStage.setTitle("Bank Managment System");
+		MainStage.setWidth(700);
+		MainStage.setHeight(700);
+		MainStage.setResizable(false);
+		
+		Group root = new Group();
+		addComponent(root);
+		
+		Scene s1 = new Scene(root);
+		MainStage.setScene(s1);
+		MainStage.show();
+			
+	}
+
+	private void addComponent(Group root) {
+		Text txt_tit = new Text();
+		txt_tit.setText("WelCome to Bank Al-Habib");
+		txt_tit.setFont(Font.font("Georgia",FontWeight.BOLD,FontPosture.ITALIC,32));
+		txt_tit.setX(130);
+		txt_tit.setY(100);
+		txt_tit.setFill(Color.LIGHTBLUE);
+		txt_tit.setStroke(Color.DARKBLUE);
+		
+		Text tx1 = new Text();
+		tx1.setText("Name ");
+		tx1.setX(150);
+		tx1.setY(200);
+		tx1.setFill(Color.LIGHTBLUE);
+		tx1.setStroke(Color.DARKBLUE);
+		tx1.setFont(Font.font("Georgia",FontWeight.BOLD,FontPosture.ITALIC,20));
+		
+		TextField txt_Field = new TextField();
+		txt_Field.setTranslateX(270);
+		txt_Field.setTranslateY(180);
+		txt_Field.setPromptText("username");
+		          
+		Text pswd1 = new Text();
+		pswd1.setText("Password ");
+		pswd1.setFill(Color.LIGHTBLUE);
+		pswd1.setStroke(Color.DARKBLUE);
+		pswd1.setX(150);
+		pswd1.setY(250);
+		pswd1.setFont(Font.font("Georgia",FontWeight.BOLD,FontPosture.ITALIC,20));
+		
+		PasswordField pswd_Field = new PasswordField();
+		pswd_Field.setTranslateX(270);
+		pswd_Field.setTranslateY(230);
+		pswd_Field.setPromptText("password");
+
+		Image img = new Image("file:/../Image/d.jpg");
+		ImageView imgv = new ImageView(img);
+		imgv.setFitWidth(700);
+		imgv.setFitHeight(700);
+		
+		Button b1 = new Button("Login");
+		b1.setTranslateX(150);
+		b1.setTranslateY(300);
+		b1.setTextFill(Color.BLUE);
+		b1.setTextFill(Color.BLACK);
+		
+		b1.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {
+
+		if(txt_Field.getText().equals("admin") && pswd_Field.getText().equals("12345")) {
+			
+			HomePage home_page = new HomePage();
+			((Stage)pswd_Field.getScene().getWindow()).close();
+		}
+		else {
+			Alert msg = new Alert(AlertType.ERROR);
+			msg.setTitle("Login Failed");
+			msg.setHeaderText("You can not login");
+			msg.setContentText("User name or password is incorrect");
+			msg.showAndWait();
+		}
+				
+			}
+		});
+		
+		Button b2 = new Button("Create New Account");
+		b2.setTranslateX(150);
+		b2.setTranslateY(350);
+		b2.setTextFill(Color.BLUE);
+		b2.setTextFill(Color.BLACK);
+		b2.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {
+				CreateAcount create = new CreateAcount();
+				((Stage)pswd_Field.getScene().getWindow()).close();
+			}
+		});
+		
+		Button b3 = new Button("Exit");
+		b3.setTranslateX(150);
+		b3.setTranslateY(400);
+		b3.setTextFill(Color.BLUE);
+		b3.setTextFill(Color.BLACK);
+		b3.setOnAction(new EventHandler<ActionEvent>() {
+                                                                                                                       
+			@Override
+			public void handle(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
+		
+		
+		Button b4 = new Button("Contact us");
+		b4.setTranslateX(150);
+		b4.setTranslateY(450);
+		b4.setTextFill(Color.BLUE);
+		b4.setTextFill(Color.BLACK);
+		b4.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {
+				ContactUs cu = new ContactUs();
+				((Stage)pswd_Field.getScene().getWindow()).close();
+			}
+			
+		});
+		
+		Button b5 = new Button("Ask a Question");
+		b5.setTranslateX(150);
+		b5.setTranslateY(500);
+		b5.setTextFill(Color.BLUE);
+		b5.setTextFill(Color.BLACK);
+		b5.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {
+				AskQuestion ask = new AskQuestion();
+				((Stage)pswd_Field.getScene().getWindow()).close();
+			}
+		});
+		
+		root.getChildren().addAll(imgv,txt_tit,tx1,
+				txt_Field,pswd1,pswd_Field,b1,b2,b3,b4,b5);
+	}
+	public static void main(String[] args) {
+		launch(args);
+	}
+}
+
+
+
+public class HomePage {
+	
+	HomePage(){
+		
+		Stage Home_stage = new Stage();
+		Home_stage.setWidth(500);
+		Home_stage.setHeight(600);
+		Home_stage.setResizable(false);
+		Home_stage.setTitle("Bank Al_Habib - HOME");
+		
+		
+		Group H_root = new Group();
+		addComponent(H_root);
+		
+		Scene Home_Scene = new Scene(H_root);
+		
+		Home_stage.setScene(Home_Scene);
+		Home_stage.show();
+		
+	}
+
+	private void addComponent(Group h_root) {
+	
+		Text tx1 = new Text();
+		tx1.setText("Home Page");
+		tx1.setFont(Font.font("Georgia",FontWeight.BOLD,FontPosture.ITALIC,32));
+		tx1.setFill(Color.LIGHTBLUE);
+		tx1.setStroke(Color.DARKBLUE);
+		tx1.setTranslateX(150);
+		tx1.setTranslateY(100);
+		
+		Image img = new Image("file:/../Image/d.jpg");
+		ImageView imgv = new ImageView(img);
+		imgv.setFitWidth(700);
+		imgv.setFitHeight(600);
+		
+		Button dep = new Button("Deposite Amount");
+		dep.setTextFill(Color.DARKBLUE);
+		dep.setPrefWidth(150);
+		dep.setPrefHeight(50);
+		dep.setTranslateX(150);
+		dep.setTranslateY(150);
+		dep.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				Deposite d = new Deposite();
+				((Stage)tx1.getScene().getWindow()).close();
+			}
+			
+		});
+		 
+		Button wid = new Button("Withdrawal Amount");
+		wid.setTextFill(Color.DARKBLUE);
+		wid.setPrefWidth(150);
+		wid.setPrefHeight(50);
+		wid.setTranslateX(150);
+		wid.setTranslateY(220);
+		wid.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				Withdrawal wd = new Withdrawal();
+				((Stage)tx1.getScene().getWindow()).close();
+			}
+			
+		});
+		
+		Button check = new Button("Check Balance");
+		check.setTextFill(Color.DARKBLUE);
+		check.setPrefWidth(150);
+		check.setPrefHeight(50);
+		check.setTranslateX(150);
+		check.setTranslateY(290);
+		check.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {
+				Balance b = new Balance();
+				((Stage)tx1.getScene().getWindow()).close();
+			}
+			
+		});
+		
+		Button profile = new Button(" View Profile ");
+		profile.setPrefWidth(150);
+		profile.setPrefHeight(50);
+		profile.setTranslateX(150);
+		profile.setTranslateY(360);
+		profile.setTextFill(Color.DARKBLUE);
+		profile.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				
+				ProfileStage pro = new ProfileStage();
+				((Stage)tx1.getScene().getWindow()).close();
+			}
+			
+		});
+
+		
+		h_root.getChildren().addAll(imgv,tx1,dep,wid,check,profile);
+	}
+
+}
+
+
+
+
+public class Profile{
+	String username;
+	String email;
+	String CNIC;
+	String Mob;
+	String Dob;
+	String Gender;
+	String Account_No;
+	
+	
+	Profile(String username,String email,String CNIC,String Mob,String dob,String Gender,String Account_No){
+		this.username = username;
+		this.email = email;
+		this.CNIC = CNIC;
+		this.Mob = Mob;
+		this.Dob = Dob;
+		this.Gender= Gender;
+		this.Account_No = Account_No;
+	}
+
+
+	public String getUsername() {
+		return username;
+	}
+
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public String getCNIC() {
+		return CNIC;
+	}
+
+
+	public void setCNIC(String cNIC) {
+		CNIC = cNIC;
+	}
+
+
+	public String getMob() {
+		return Mob;
+	}
+
+
+	public void setMob(String mob) {
+		Mob = mob;
+	}
+
+
+	public String getDob() {
+		return Dob;
+	}
+
+
+	public void setDob(String dob) {
+		Dob = dob;
+	}
+
+
+	public String getGender() {
+		return Gender;
+	}
+
+
+	public void setGender(String gender) {
+		Gender = gender;
+	}
+
+
+	public String getAccount_No() {
+		return Account_No;
+	}
+
+
+	public void setAccount_No(String account_No) {
+		Account_No = account_No;
+	}
+
+
+public class ProfileStage{
+
+	ProfileStage(){
+		Stage stp=new Stage();
+		stp.setTitle("Bank Al-Habib - Profile");
+		stp.setWidth(700);
+		stp.setHeight(700);
+		stp.setResizable(false);
+		
+		//
+		Group root=new Group();
+		addComponent(root);
+		
+		Scene sc=new Scene(root);
+		stp.setScene(sc);
+		stp.show();		
+	}
+
+	private void addComponent(Group root) {
+		
+		
+		Image img = new Image("file:/../Image/d.jpg");
+		ImageView imgv = new ImageView(img);
+		imgv.setFitWidth(700);
+		imgv.setFitHeight(700);
+		
+		TableView tv = new TableView();
+		TableColumn name = new TableColumn<>("Name");
+		TableColumn email = new TableColumn<>("Email");
+		TableColumn cnic = new TableColumn<>("CNIC");
+		TableColumn mob = new TableColumn<>("Mobile");
+		TableColumn dob = new TableColumn<>("Date of Birth");
+		TableColumn gender = new TableColumn<>("Gender");
+		TableColumn acc_no = new TableColumn<>("Account No");
+	
+		tv.getColumns().add(name);
+		tv.getColumns().add(email);
+		tv.getColumns().add(cnic);
+		tv.getColumns().add(mob);
+		tv.getColumns().add(dob);
+		tv.getColumns().add(gender);
+		tv.getColumns().add(acc_no);
+		
+		ObservableList data = FXCollections.observableArrayList();
+		
+		tv.setItems(data);
+		tv.setTranslateY(45);
+		root.getChildren().add(imgv);
+		root.getChildren().add(tv);
+		
+/*		
+		String [][] FileRecords = getAccountData();
+		
+		if (FileRecords != null){
+			for (int row=0; row<FileRecords.length; row++){
+
+				data.add(new Profile(FileRecords[row][0],FileRecords[row][1],FileRecords[row][2],FileRecords[row][3],FileRecords[row][4],FileRecords[row][5],FileRecords[row][6]));
+			}
+		}
+		}
+	
+	
+	public String[][] getAccountData() {
+		try{
+			List<String> list = new ArrayList<String>();
+			String csvFile = "file://../Data/Data.txt";
+			FileReader ExpenseFile = new FileReader(csvFile);
+			BufferedReader br = new BufferedReader(ExpenseFile);
+			String data[][];
+			data = new String[7][];
+			
+			String[] row = new String[7];
+			String record = "";
+			int rowNum = 0;
+			
+			while((record = br.readLine()) != null){
+				
+				row = record.split("\n");
+				data[rowNum] = row;
+				rowNum++;
+			}               
+			br.close();
+			return data;
+		}
+		catch(FileNotFoundException ex){
+			System.out.println("File not Found");
+		}
+		catch(IOException ex){
+			System.out.println("File not Found");
+		}
+		catch(NullPointerException ex){
+			System.out.println("Null Pointer");
+		}
+		return null;     
+*/	
+	} 
+}
+
+
+
+
+
+public class Withdrawal {
+
+	Withdrawal(){
+		Stage Home_stage = new Stage();
+		Home_stage.setWidth(400);
+		Home_stage.setHeight(500);
+		Home_stage.setResizable(false);
+		Home_stage.setTitle("Bank Al_Habib - HOME");
+		
+		
+		Group H_root = new Group();
+		addComponent(H_root);
+		
+		Scene Home_Scene = new Scene(H_root);
+		
+		Home_stage.setScene(Home_Scene);
+		Home_stage.show();
+	}
+
+	private void addComponent(Group h_root) {
+		Text txt1 = new Text("Withdrawal");
+		txt1.setFont(Font.font("",FontWeight.BOLD,FontPosture.ITALIC,32));
+		txt1.setFill(Color.LIGHTBLUE);
+		txt1.setStroke(Color.DARKBLUE);
+		txt1.setTranslateX(120);
+		txt1.setTranslateY(70);
+		
+		Text txt2 = new Text("Enter your account number");
+		txt2.setFont(Font.font("",FontWeight.MEDIUM,FontPosture.REGULAR,20));
+		txt2.setTranslateX(70);
+		txt2.setTranslateY(150);
+		txt2.setFill(Color.LIGHTBLUE);
+		txt2.setStroke(Color.DARKBLUE);
+		
+		Image img = new Image("file:/../Image/d.jpg");
+		ImageView imgv = new ImageView(img);
+		imgv.setFitWidth(700);
+		imgv.setFitHeight(600);
+		
+		Text txt3 = new Text("Amount");
+		txt3.setFont(Font.font("",FontWeight.MEDIUM,FontPosture.REGULAR,20));
+		txt3.setTranslateX(70);
+		txt3.setTranslateY(260);
+		txt3.setFill(Color.LIGHTBLUE);
+		txt3.setStroke(Color.DARKBLUE);
+		
+		TextField txtf1 = new TextField();
+		txtf1.setTranslateX(70);
+		txtf1.setTranslateY(280);
+		
+		TextField txtf = new TextField();
+		txtf.setTranslateX(75);
+		txtf.setTranslateY(190);
+		txtf.setPrefWidth(230);
+		
+		Button btn = new Button("WithDrawal");
+		btn.setTranslateX(250);
+		btn.setTranslateY(280);
+		btn.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {
+				if (txtf.getText().equals("1230")) {
+					
+					Alert msg = new Alert(AlertType.CONFIRMATION);
+					msg.setTitle("Withdrawal");
+					msg.setHeaderText("Thanks for Withdrawal");
+					msg.setContentText(txtf1.getText()+" has been withdrawal from your account");
+					msg.showAndWait();
+				}
+				else {
+					Alert msg = new Alert(AlertType.ERROR);
+					msg.setTitle("Error");
+					msg.setHeaderText("Incorrect Account");
+					msg.setContentText("Your account number is incorrect");
+					msg.showAndWait();
+				}
+				
+			}
+			
+		});
+		h_root.getChildren().addAll(imgv,txt1,txt2,txtf,txt3,txtf1,btn);
+		
+	}
+}
+
+
+
+public class Deposite {
+
+	Deposite(){
+		Stage Home_stage = new Stage();
+		Home_stage.setWidth(400);
+		Home_stage.setHeight(500);
+		Home_stage.setResizable(false);
+		Home_stage.setTitle("Bank Al_Habib - HOME");
+		
+		
+		Group H_root = new Group();
+		addComponent(H_root);
+		
+		Scene Home_Scene = new Scene(H_root);
+		
+		Home_stage.setScene(Home_Scene);
+		Home_stage.show();
+	}
+
+	private void addComponent(Group h_root) {
+		Text txt1 = new Text("Deposite");
+		txt1.setFont(Font.font("",FontWeight.BOLD,FontPosture.ITALIC,32));
+		txt1.setFill(Color.LIGHTBLUE);
+		txt1.setStroke(Color.DARKBLUE);
+		txt1.setTranslateX(120);
+		txt1.setTranslateY(70);
+		
+		Text txt2 = new Text("Enter your account number");
+		txt2.setFont(Font.font("",FontWeight.MEDIUM,FontPosture.REGULAR,20));
+		txt2.setTranslateX(70);
+		txt2.setTranslateY(150);
+		txt2.setFill(Color.LIGHTBLUE);
+		txt2.setStroke(Color.DARKBLUE);
+		
+		Image img = new Image("file:/../Image/d.jpg");
+		ImageView imgv = new ImageView(img);
+		imgv.setFitWidth(700);
+		imgv.setFitHeight(600);
+		
+		Text txt3 = new Text("Amount");
+		txt3.setFont(Font.font("",FontWeight.MEDIUM,FontPosture.REGULAR,20));
+		txt3.setTranslateX(70);
+		txt3.setTranslateY(260);
+		txt3.setFill(Color.LIGHTBLUE);
+		txt3.setStroke(Color.DARKBLUE);
+		
+		TextField txtf1 = new TextField();
+		txtf1.setTranslateX(70);
+		txtf1.setTranslateY(280);
+		
+		TextField txtf = new TextField();
+		txtf.setTranslateX(75);
+		txtf.setTranslateY(190);
+		txtf.setPrefWidth(230);
+		
+		Button btn = new Button("Deposite");
+		btn.setTranslateX(250);
+		btn.setTranslateY(280);
+		btn.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {
+				if (txtf.getText().equals("1230")) {
+					
+					Alert msg = new Alert(AlertType.CONFIRMATION);
+					msg.setTitle("Deposited");
+					msg.setHeaderText("Thanks for Deposite");
+					msg.setContentText(txtf1.getText()+" has been deposited in your account");
+					msg.showAndWait();
+				}
+				
+				else {
+					Alert msg = new Alert(AlertType.ERROR);
+					msg.setTitle("Error");
+					msg.setHeaderText("Incorrect Account");
+					msg.setContentText("Your account number is incorrect");
+					msg.showAndWait();
+				}
+				
+			}
+			
+		});
+		h_root.getChildren().addAll(imgv,txt1,txt2,txtf,txt3,txtf1,btn);
+		
+	}
+}
+
+
+
+
+
+public class CreateAcount {
+
+	CreateAcount(){
+		Stage st_create = new Stage();
+		st_create.setTitle("Bank Al-Habib - Create Account");
+		st_create.setWidth(700);
+		st_create.setHeight(800);
+		st_create.setResizable(false);
+		st_create.setX(100);
+		st_create.setY(50);
+		
+		Group root1 = new Group();
+		addComponent(root1);
+		
+		Scene CreateScene = new Scene(root1);
+		st_create.setScene(CreateScene);
+		st_create.show();
+	}
+
+	private void addComponent(Group root1) {
+		
+		Text title = new Text();
+		title.setText("Create Account");
+		title.setTranslateX(140);
+		title.setTranslateY(50);
+		title.setFont(Font.font("Georgia",FontWeight.BOLD,FontPosture.ITALIC,32));
+		title.setFill(Color.LIGHTBLUE);
+		title.setStroke(Color.DARKBLUE);
+		
+		Image img = new Image("file:/../Image/d.jpg");
+		ImageView imgv = new ImageView(img);
+		imgv.setFitWidth(700);
+		imgv.setFitHeight(800);
+		
+		Text tx1 = new Text();
+		tx1.setText("Username");
+		tx1.setTranslateX(50);
+		tx1.setTranslateY(100);
+		tx1.setFill(Color.LIGHTBLUE);
+		tx1.setStroke(Color.DARKBLUE);
+		tx1.setFont(Font.font("Georgia",FontWeight.BOLD,FontPosture.ITALIC,12));
+		
+		TextField tx_f1 = new TextField();
+		tx_f1.setTranslateX(50);
+		tx_f1.setTranslateY(110);
+		tx_f1.setPromptText("Enter user name");
+	
+		
+		Text tx2 = new Text();
+		tx2.setText("Enter Your Email Address");
+		tx2.setFont(Font.font("Georgia",FontWeight.BOLD,FontPosture.ITALIC,12));
+		tx2.setFill(Color.LIGHTBLUE);
+		tx2.setStroke(Color.DARKBLUE);
+		tx2.setTranslateX(50);
+		tx2.setTranslateY(160);
+		
+		TextField tx_f2 = new TextField();
+		tx_f2.setTranslateX(50);
+		tx_f2.setTranslateY(170);
+		tx_f2.setPromptText("Enter email address");
+		
+		Text pas = new Text();
+		pas.setText("Enter Password");
+		pas.setFont(Font.font("GEorgia",FontWeight.BOLD,FontPosture.ITALIC,12));
+		pas.setFill(Color.LIGHTBLUE);
+		pas.setStroke(Color.DARKBLUE);
+		pas.setTranslateX(50);
+		pas.setTranslateY(220);
+		
+		PasswordField pas_f = new PasswordField();
+		pas_f.setTranslateX(50);
+		pas_f.setTranslateY(230);
+		pas_f.setPromptText("Enter password");
+		
+		Text pas_confirm = new Text();
+		pas_confirm.setText("Confirm Password");
+		pas_confirm.setFont(Font.font("GEorgia",FontWeight.BOLD,FontPosture.ITALIC,12));
+		pas_confirm.setFill(Color.LIGHTBLUE);
+		pas_confirm.setStroke(Color.DARKBLUE);
+		pas_confirm.setTranslateX(50);
+		pas_confirm.setTranslateY(280);
+		
+		PasswordField pas_f_confirm = new PasswordField();
+		pas_f_confirm.setTranslateX(50);
+		pas_f_confirm.setTranslateY(290);
+		pas_f_confirm.setPromptText("Confirm Password");
+		
+		Text cnic = new Text();
+		cnic.setText("Enter CNIC No");
+		cnic.setFont(Font.font("Georgia",FontWeight.BOLD,FontPosture.ITALIC,12));
+		cnic.setFill(Color.LIGHTBLUE);
+		cnic.setStroke(Color.DARKBLUE);
+		cnic.setTranslateX(50);
+		cnic.setTranslateY(340);
+		
+		TextField cnic_f = new TextField();
+		cnic_f.setTranslateX(50);
+		cnic_f.setTranslateY(350);
+		cnic_f.setPromptText("Enter CNIC");
+		
+		Text mob = new Text();
+		mob.setText("Enter Mobile No");
+		mob.setFont(Font.font("Georgia",FontWeight.BOLD,FontPosture.ITALIC,12));
+		mob.setFill(Color.LIGHTBLUE);
+		mob.setStroke(Color.DARKBLUE);
+		mob.setTranslateX(50);
+		mob.setTranslateY(400);
+		
+		TextField mob_f = new TextField();
+		mob_f.setTranslateX(50);
+		mob_f.setTranslateY(410);
+		mob_f.setPromptText("Enter mobile number");
+		
+		Text d_o_b = new Text();
+		d_o_b.setText("Enter Date of Birth");
+		d_o_b.setFont(Font.font("Georgia",FontWeight.BOLD,FontPosture.ITALIC,12));
+		d_o_b.setFill(Color.LIGHTBLUE);
+		d_o_b.setStroke(Color.DARKBLUE);
+		d_o_b.setTranslateX(50);
+		d_o_b.setTranslateY(460);
+		
+		TextField dob_f = new TextField();
+		dob_f.setTranslateX(50);
+		dob_f.setTranslateY(470);
+		dob_f.setPromptText("Date of Birth"); 
+		Text gender = new Text();
+		gender.setText("Gender");
+		gender.setFont(Font.font("GEorgia",FontWeight.BOLD,FontPosture.ITALIC,12));
+		gender.setFill(Color.LIGHTBLUE);
+		gender.setStroke(Color.DARKBLUE);
+		gender.setTranslateX(50);
+		gender.setTranslateY(530);
+		
+		
+		
+		RadioButton rb1 =new RadioButton("Male");
+		rb1.setFont(Font.font("Georgia",FontWeight.BOLD,FontPosture.ITALIC,10));
+		rb1.setTextFill(Color.DARKBLUE);
+		rb1.setTranslateX(50);
+        rb1.setTranslateY(540);
+
+        RadioButton rb2 =new RadioButton("Female");
+        rb2.setFont(Font.font("Georgia",FontWeight.BOLD,FontPosture.ITALIC,10));
+        rb2.setTextFill(Color.DARKBLUE);
+		rb2.setTranslateX(110);
+        rb2.setTranslateY(540);
+	
+		ToggleGroup toggle = new ToggleGroup();
+		rb1.setToggleGroup(toggle);
+		rb2.setToggleGroup(toggle);
+		
+		Text acc_no = new Text();
+		acc_no.setText("Account No");
+		acc_no.setFill(Color.LIGHTBLUE);
+		acc_no.setStroke(Color.DARKBLUE);
+		acc_no.setFont(Font.font("GEorgia",FontWeight.BOLD,FontPosture.ITALIC,12));
+		acc_no.setTranslateX(50);
+		acc_no.setTranslateY(590);
+		
+		TextField acc_no_f = new TextField();
+		acc_no_f.setTranslateX(50);
+		acc_no_f.setTranslateY(600);
+		acc_no_f.setPromptText("Enter Account no");
+		
+		Button create_b = new Button("Create");
+		create_b.setTextFill(Color.DARKBLUE);
+		create_b.setFont(Font.font("GEorgia",FontWeight.EXTRA_BOLD,FontPosture.ITALIC,20));
+		create_b.setTranslateX(150);
+		create_b.setTranslateY(670);
+	
+		
+		create_b.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent e) {
+				
+				
+				if((tx_f1.getText().trim().isEmpty() || tx_f2.getText().trim().isEmpty()|| pas_f.getText().trim().isEmpty() || pas_f_confirm.getText().trim().isEmpty()
+					|| cnic_f.getText().trim().isEmpty() || dob_f.getText().trim().isEmpty() || acc_no_f.getText().trim().isEmpty() || toggle.getSelectedToggle().equals(null) || acc_no_f.getText().equals("1230") )){
+				
+				
+					Alert al_msg = new Alert(AlertType.ERROR);
+					al_msg.setTitle("Account is not be created");
+					al_msg.setHeaderText("Any Of The Field Is Expty");
+					al_msg.setContentText("Check Fields");
+					al_msg.showAndWait();
+
+				}
+				else{
+					
+					if(pas_f.getText().equals(pas_f_confirm.getText()))
+					{
+
+						String rec = dob_f.getText().toString()+ " || " +tx_f1.getText() + " || " +tx_f2.getText() + " || " +pas_f.getText() + " || " +
+								pas_f_confirm.getText() + " || " +cnic_f.getText() + " || " +acc_no_f.getText() + " || " +toggle.getSelectedToggle().toString()+ "\n\n" ;
+						
+						Alert al_msg = new Alert(AlertType.CONFIRMATION);
+						al_msg.setTitle("Are you sure you want to Create Account");
+						al_msg.setHeaderText("");
+						al_msg.setContentText("Account Has Been Created");
+						al_msg.showAndWait();
+				
+						
+			    	if(addAccountRecord(rec)){
+							Alert alert = new Alert(AlertType.INFORMATION);
+							alert.setTitle("Account created Successfully");
+							alert.setContentText("Account data has been successfully Saved");
+							alert.showAndWait();
+						}
+
+					}
+					else{
+						Alert al_msg = new Alert(AlertType.ERROR);
+						al_msg.setTitle("Password do not match");
+						al_msg.setContentText("Make sure you entered same Passwords in both Fields");
+						al_msg.showAndWait();
+					}
+					
+				}
+				}
+			});
+				
+
+		root1.getChildren().addAll(imgv,title,tx1,tx_f1,tx2,tx_f2,
+				pas,pas_f,pas_confirm,pas_f_confirm,cnic,cnic_f,mob,mob_f,
+				d_o_b,dob_f,gender,rb1,rb2,create_b
+				,acc_no,acc_no_f);
+	}
+	
+	public boolean addAccountRecord(String record){
+		try{
+				FileWriter fw = new FileWriter("file://../Data/Data.txt",true);
+				fw.write(record);
+				fw.close();
+	}
+		
+		catch(IOException e){
+		return false;
+		}
+				return true;
+		}
+
+}
+
+
+
+public class ContactUs {
+
+	ContactUs(){
+		Stage Home_stage = new Stage();
+		Home_stage.setWidth(400);
+		Home_stage.setHeight(500);
+		Home_stage.setResizable(false);
+		Home_stage.setTitle("Bank Al_Habib - About us");
+		
+		
+		Group H_root = new Group();
+		addComponent(H_root);
+		
+		Scene Home_Scene = new Scene(H_root);
+		
+		Home_stage.setScene(Home_Scene);
+		Home_stage.show();
+	}
+
+	private void addComponent(Group h_root) {
+		Text txt1 = new Text("Contact Us");
+		txt1.setFont(Font.font("",FontWeight.BOLD,FontPosture.ITALIC,32));
+		txt1.setFill(Color.LIGHTBLUE);
+		txt1.setStroke(Color.DARKBLUE);
+		txt1.setTranslateX(120);
+		txt1.setTranslateY(70);
+		
+		Text txt2 = new Text("For further details, you can call the Bank’s 24/7\n Call Centre at 111-014-014 (For Local customers) \n 92-21-32446978-79 (For International customers) \n Email at info@bankalhabib.com \n feedback@bankalhabib.com");
+		txt2.setFont(Font.font("",FontWeight.MEDIUM,FontPosture.REGULAR,15));
+		txt2.setTranslateX(30);
+		txt2.setTranslateY(150);
+		txt2.setFill(Color.LIGHTBLUE);
+		txt2.setStroke(Color.DARKBLUE);
+		
+		Image img = new Image("file:/../Image/d.jpg");
+		ImageView imgv = new ImageView(img);
+		imgv.setFitWidth(700);
+		imgv.setFitHeight(600);
+		
+		
+		h_root.getChildren().addAll(imgv,txt1,txt2);
+		
+	}
+}
+
+
+
+
+
+public class Balance {
+
+	Balance(){
+		Stage Home_stage = new Stage();
+		Home_stage.setWidth(400);
+		Home_stage.setHeight(500);
+		Home_stage.setResizable(false);
+		Home_stage.setTitle("Bank Al_Habib - HOME");
+		
+		Group H_root = new Group();
+		addComponent(H_root);
+		
+		Scene Home_Scene = new Scene(H_root);
+		
+		Home_stage.setScene(Home_Scene);
+		Home_stage.show();
+	}
+	
+	private void addComponent(Group h_root) {
+		Text txt1 = new Text("Balance Check");
+		txt1.setFont(Font.font("",FontWeight.BOLD,FontPosture.ITALIC,32));
+		txt1.setFill(Color.LIGHTBLUE);
+		txt1.setStroke(Color.DARKBLUE);
+		txt1.setTranslateX(120);
+		txt1.setTranslateY(70);
+		
+		Text txt2 = new Text("Enter your account number");
+		txt2.setFont(Font.font("",FontWeight.MEDIUM,FontPosture.REGULAR,20));
+		txt2.setTranslateX(70);
+		txt2.setTranslateY(150);
+		txt2.setFill(Color.LIGHTBLUE);
+		txt2.setStroke(Color.DARKBLUE);
+		
+		Image img = new Image("file:/../Image/d.jpg");
+		ImageView imgv = new ImageView(img);
+		imgv.setFitWidth(700);
+		imgv.setFitHeight(600);
+		
+		TextField txtf = new TextField();
+		txtf.setTranslateX(75);
+		txtf.setTranslateY(190);
+		txtf.setPrefWidth(230);
+		
+		Button btn = new Button("Check");
+		btn.setTranslateX(75);
+		btn.setTranslateY(250);
+		btn.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {
+				if (txtf.getText().equals("1230")) {
+					
+					Alert msg = new Alert(AlertType.CONFIRMATION);
+					msg.setTitle("Balance Check");
+					msg.setHeaderText("Thanks for Balance Check");
+					msg.setContentText("Your current balance is 5000");
+					msg.showAndWait();
+				}
+				else {
+					Alert msg = new Alert(AlertType.ERROR);
+					msg.setTitle("Error");
+					msg.setHeaderText("Incorrect Account");
+					msg.setContentText("Your account number is incorrect");
+					msg.showAndWait();
+				}
+				
+			}
+		
+		});
+		h_root.getChildren().addAll(imgv,txt1,txt2,txtf,btn);
+		
+	}
+
+
+
+
+
+
+public class AskQuestion {
+
+	AskQuestion(){
+		Stage Home_stage = new Stage();
+		Home_stage.setWidth(700);
+		Home_stage.setHeight(600);
+		Home_stage.setResizable(false);
+		Home_stage.setTitle("Bank Al_Habib - AskQuestion");
+		
+		
+		Group H_root = new Group();
+		addComponent(H_root);
+		
+		Scene Home_Scene = new Scene(H_root);
+		
+		Home_stage.setScene(Home_Scene);
+		Home_stage.show();
+	}
+
+	private void addComponent(Group h_root) {
+		Image img = new Image("file:/../Image/d.jpg");
+		ImageView imgv = new ImageView(img);
+		imgv.setFitWidth(700);
+		imgv.setFitHeight(600);
+		
+		TextField txt_f1 = new TextField();
+		txt_f1.setTranslateX(200);
+		txt_f1.setTranslateY(50);
+		txt_f1.setPrefSize(250, 250);
+		txt_f1.setPromptText("Ask anything which you would like to ask");
+		
+		Button btn = new Button("Ask Anonymous");
+		btn.setTranslateX(250);
+		btn.setTranslateY(400);
+	
+		
+		btn.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {
+				
+				
+				
+				if(txt_f1.getText().trim().isEmpty())
+				{
+					Alert msg = new Alert(AlertType.ERROR);
+					msg.setTitle("you have not write anything");
+					msg.setContentText("Please write something than Ask");
+					msg.showAndWait();
+				}
+
+				  else
+				{ 
+					  String rec = txt_f1.getText()+" ";
+					if(askQuestion(rec)) {
+						
+						Alert msg2 = new Alert(AlertType.INFORMATION);
+						msg2.setTitle("Your question send succesfully");
+						msg2.setContentText("we are very soon reply you with your Answer");
+						msg2.showAndWait();
+				                      	}
+				    }
+			
+			}			
+			
+		});
+		    h_root.getChildren().addAll(imgv,txt_f1,btn);
+			}
+	
+public boolean askQuestion(String record){
+				try{
+						FileWriter fw = new FileWriter("file://../Data/ask.txt",true);
+						fw.write(record);
+						fw.close();
+			}
+				
+				catch(IOException e){
+				return false;
+				}
+						return true;
+				}
+		}

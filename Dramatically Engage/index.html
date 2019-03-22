@@ -1,0 +1,268 @@
+<html>
+<head>
+    <title>
+        Engage
+    </title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="jquery-3.3.1.js"> </script>
+
+    <script type="text/javascript">
+    
+    
+        $(document).ready(function(){
+
+// variable for home
+                var color = $("td#home>a").val();
+                var bg = $("td#home").val();
+                var br = $("td#home").val();
+                $("td#product>a").css("color",color2);
+                $("td#product").css("background-color",bg2);
+                $("td#product").css("border-radius",br2);
+                
+// variable for product
+
+                var color2 = $("td#product>a").val();
+                var bg2 = $("td#product").val();
+                var br2 = $("td#product").val();
+
+// variable for services
+
+                var color3 = $("td#service>a").val();
+                var bg3 = $("td#service").val();
+                var br3 = $("td#service").val();          
+
+// variable for contact
+
+                var color4 = $("td#contact>a").val();
+                var bg4 = $("td#contact").val();
+                var br4 = $("td#contact").val();        
+
+            $("#content").hover(function(){
+
+                $("td#home>a").css("color","white");
+                $("td#home").css("background-color","rgba(1,1,1,0.5)");
+                $("td#home").css("border-radius","10px");
+
+                $("td#product>a").css("color",color2);
+                    $("td#product").css("background-color",bg2);
+                    $("td#product").css("border-radius",br2);
+
+                
+                    $("td#contact>a").css("color",color4);
+            $("td#contact").css("background-color",bg4);
+            $("td#contact").css("border-radius",br4);
+
+            $("td#service>a select ").css("color",color3);
+                $("td#service").css("background-color",bg3);
+                $("td#service").css("border-radius",br3);
+                  
+
+            });
+
+                $(".dv3").hover(function(){
+
+                    $("td#product>a").css("color","white");
+                    $("td#product").css("background-color","rgba(1,1,1,0.5)");
+                    $("td#product").css("border-radius","10px");
+
+
+                    $("td#service>a select ").css("color",color3);
+                $("td#service").css("background-color",bg3);
+                $("td#service").css("border-radius",br3);
+
+                    $("td#home>a").css("color",color);
+                $("td#home").css("background-color",bg);
+                $("td#home").css("border-radius",br);
+                    
+                    
+                $("td#contact>a").css("color",color4);
+            $("td#contact").css("background-color",bg4);
+            $("td#contact").css("border-radius",br4);
+
+                });
+
+                
+                $("#dv5").hover(function(){
+
+                $("td#service>a select ").css("color","white");
+                $("td#service").css("background-color","rgba(1,1,1,0.5)");
+                $("td#service").css("border-radius","10px");
+                
+
+
+                $("td#home>a").css("color",color);
+                $("td#home").css("background-color",bg);
+                $("td#home").css("border-radius",br);
+
+                $("td#product>a").css("color",color2);
+                    $("td#product").css("background-color",bg2);
+                    $("td#product").css("border-radius",br2);
+
+                    $("td#contact>a").css("color",color4);
+            $("td#contact").css("background-color",bg4);
+            $("td#contact").css("border-radius",br4);
+
+                });
+
+                
+                $("#dv7").hover(function(){
+
+            $("td#contact>a").css("color","white");
+            $("td#contact").css("background-color","rgba(1,1,1,0.5)");
+            $("td#contact").css("border-radius","10px");
+
+
+            $("td#service>a select ").css("color",color3);
+            $("td#service").css("background-color",bg3);
+            $("td#service").css("border-radius",br3);
+
+            $("td#home>a").css("color",color);
+            $("td#home").css("background-color",bg);
+            $("td#home").css("border-radius",br);
+
+            $("td#product>a").css("color",color2);
+                    $("td#product").css("background-color",bg2);
+                    $("td#product").css("border-radius",br2);
+
+
+
+});
+
+
+        });
+    
+    </script>
+
+</head>
+<body>
+
+   
+    
+        <div id="nav">
+                <div id="logo">
+                    <label >
+                        LOGO
+                    </label>
+                </div>
+                <div id="links">
+                    <table>
+                        <tr height="55px"> 
+                <td id="home">
+                    <a href="#content" > Home</a> </td><td id="product"> <a href="#dv3">Product</a>
+                </td>
+                <td id="service">
+                <a href="#dv5">
+                        
+            <Select id="sel">
+                    <option class="option"> Services</option>
+                    <option class="option"> Engage</option>
+                    <option class="option"> Pontification</option>
+                    <option class="option"> Synergize</option>
+            </Select>
+                    </a> 
+                </td>
+                <td id="contact">
+                    <a href="#dv7">Contacts</a>
+                </td>
+                </tr>
+                </table>
+                </div>
+               </div>
+
+               <div id="content">
+                    <h1 style="color:white;padding-top:130px;text-align:center;font-size:100px;font-family:Arial;font-weight:lighter;">Dramatically Engage</h1>
+                    <h3 style="color:white;text-align:center;margin-top:-40px;font-size:20px;font-family:Arial;font-weight:lighter;">
+                            Objectively innovate empowered manufactured products whereas parallel platforms.
+                    </h3>
+                    <br><br>
+              <center> <input type="submit" value="Engage Now"  id="btn" /></center>     
+               </div>
+
+               <div id="dv2">
+                    <center>
+                     <img src="./apple.png" width="70px" height="50px" />
+                     <h2>
+                             Completely synergize resource taxing relationships
+                     </h2>
+                     <center>
+                     <p>
+                             Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate <br> resource-leveling customer service for state of the art customer service.
+                     </p>
+                 </center>
+                </div>
+                
+                <div id="dv3" class="dv3">
+                        <img src="./mic.jpg" id="mic"/>
+                        </div>
+                        <div id="dv4" class="dv3">
+                        <h1 id="h1">
+                            Best in Class
+                        </h1>
+                        <p id="p1" >
+                                Holisticly predominate extensible testing procedures <br> for reliable supply chains. Dynamically innovate resource- <br> leveling customer service for state of the art customer  service.
+                        </p>
+                        <input type="submit" id="btn2" value="CLASSIFY IT" />
+                       </div>
+
+                       <div id="dv5">
+                            <h1 style="font-size:35px;text-indent:60px; ">
+                                    Superior Quality
+                            </h1>
+                            <p style="font-size:22px;font-weight:lighter;padding-left:60px;text-align:left;color:rgb(110, 110, 110);">
+                                Holisticly predominate extensible testing procedures for <br> reliable supply chains. Dynamically innovate resource- <br> leveling customer service for state of the art customer <br> service.
+                            </p>
+                            <input type="submit" value="TEST IT" id="btn3"/>
+
+                            <img src="./mob.jpg" id="mob"/>
+                        </div>
+
+                        <div id="images">
+                                <table>
+                                    <tr>
+                                        <td class="td" style="background-image:url(./unleash.jpg);">
+                                            Unleash
+                                        </td>
+                                      <td class="td" style="background-image:url(./synergize.jpg);">
+                                            Synergize
+                                        </td>
+                                        <td class="td" style="background-image:url(./procrastinate.jpg);">
+                                           Procrastinate
+                                        </td> 
+                                    </tr>
+                                </table>
+                        </div>
+
+
+                        <div id="dv6">
+                            <img src="./pin.jpg" style="padding-top:210px;padding-left:635px; width:40px; height:40px;"/>
+
+                            <h5 style="text-align:center;font-size:35px; margin-top:10px;">
+                                Sanity Check
+                            </h5>
+                            <p style="text-align:center;font-size:20px;color:rgb(99, 98, 98);margin-top:-40px;">
+                                Holisticly predominate extensible testing procedures for reliable supply chains. Dynamically innovate resource-leveling <br> customer service for state of the art customer service.
+                            </p>
+
+                            <input type="submit" value="CHECK NOW" id="btn4" />
+                        </div>
+
+                        <div id="dv7" >
+                           <h1 style="text-align:center;color:white; padding-top:80px;font-size:40px; font-family:Arial, Helvetica, sans-serif;font-weight:lighter;">Contact Us</h1>
+                            <img src="./phone2.png" style="padding-left:640px;width:40px;" />
+                            <p style="text-align:center;font-size:24px;color:rgb(255, 255, 255);">
+                                +92(312)-2282334
+                            </p>
+                            <img src="./mail.png" style="padding-left:640px;width:40px; "/>
+                            <p style="text-align:center;font-size:24px;color:rgb(255, 255, 255);">
+                                Huzaifanadir1997@gmail.com
+                            </p>
+                            </div>
+
+                            <div id="footer">
+                              <p style="font-size:24px;color:rgb(119, 116, 116);font-family:Arial, Helvetica, sans-serif;margin-top:80px;">
+                                  Copyright &copy; Muhammad Huzaifa Khan 2018
+                             </p>  
+                            </div>
+
+</body>
+</html>

@@ -1,0 +1,273 @@
+﻿body {
+    padding:0px;
+    margin:0px;
+} 
+#nav{
+    width:100%; 
+    height:83px;
+    background-color:black;
+    position:fixed;
+    box-shadow:0px 5px 8px #E39612;
+    z-index:10000;
+}
+#content{
+    width:100%;
+    height:1800px;
+    margin-top: 0px;
+}
+#footer{
+    width:100%;
+    height:200px;
+    background-color: rgb(46, 38, 116);
+}
+#logo{
+    width:140px;
+    height:50px;
+    float:left;
+    margin-top:10px;
+    margin-left:50px;
+}
+#btn1{
+    background-color:#E39612;
+    color:white;
+    float:right;
+    border:none;
+    font-weight:bold;
+    margin-top:-40px;
+    margin-right:40px;
+    width:120px;
+    height:40px;
+}
+#btn1:hover{
+    background-color:white;
+    color: black;
+    transition:0.5s;
+}
+#Menu1{
+    margin-left:80px;
+    font-size:14px;
+}
+#contentImg {
+    width:100%;
+    height:580px;
+    background-image: url('./Gallery/img2.jpg');
+    background-repeat:no-repeat;
+    background-size:100%;
+}
+#dvContent{
+    width:100%;
+    height:1000px;
+}
+#TreeView1{
+    margin-left:500px;
+    line-height:10px;
+    margin-top: -130px;
+}
+#dvFollow{
+    width:140px;
+    height:120px;
+    margin-left:700px;
+    margin-top:-100px;
+}
+#dvFollow img{
+    margin:3px;
+}
+#footerlogo{
+    margin-left:900px;
+    margin-top:-130px;
+    width:220px;
+    height:150px;
+}
+#copy{
+    width:100%;
+    height:40px;
+    background-color:black;
+    color:white;
+    font-size:x-large;
+    text-align:center;
+}
+#slide{
+    width:80%;
+    height:1800px;
+    border:1px solid white;
+    margin:auto;
+}
+#dvSub1{
+    width:100%;
+    height:180px;
+   margin-top:80px;
+}
+#dvSub1 #res{
+    background-color:#E39612;
+    color:white;
+    border:none;
+    font-weight:bold;
+    width:180px;
+    height:50px;
+}
+#dvSub1 #res:hover{
+    background-color:black;
+    color: #E39612;
+    transition:0.5s;
+}
+#slide #slider{
+    width:100%;
+    height:700px;
+    background-repeat:no-repeat;
+    background-size:100%;
+}
+#comp{
+    width:100%;
+    height:370px;
+}
+#btnComp{
+    background-color:#E39612;
+    color:white;
+    font-weight:bold;
+    width:180px;
+    height:50px;
+}
+#btnComp:hover{
+    background-color:black;
+    color: #E39612;
+    transition:0.5s;
+}
+
+#list1{
+    margin-top:20px;
+}
+
+#list2{
+    margin-top:20px;
+}
+
+#list1 li{
+    font-family:Arial;
+    height:30px;
+}
+#features{
+    width:100%;
+    height:400px;
+}
+#btnFeatures{
+    background-color:#E39612;
+    color:white;
+    border:none;
+    font-weight:bold;
+    width:180px;
+    height:50px;
+}
+#btnFeatures:hover{
+    background-color:black;
+    color: #E39612;
+    transition:0.5s;
+}
+#list2 li{
+    font-family:Arial;
+    height:30px;
+}
+#slide1{
+    width:80%;
+    height:1200px;
+    border:1px solid white;
+    margin:auto;
+}
+#slide1 #slider{
+    width:100%;
+    height:500px;
+    background-image: url('./Gallery/img2.jpg');
+    background-repeat:no-repeat;
+    background-size:100%;
+}
+#content2{
+    width:100%;
+    height:1200px;
+    margin-top: 0px;
+}
+#content3{
+    width:100%;
+    height:1000px;
+}
+#slide2{
+    width:80%;
+    height:1000px;
+    border:1px solid white;
+    margin:auto;
+}
+#slide2 #slider{
+    width:100%;
+    height:700px;
+    background-repeat:no-repeat;
+    background-size:100%;
+}
+#slide3{
+    width:80%;
+    height:1200px;
+    border:1px solid white;
+    margin:auto;
+}
+#dvSub2{
+    width:100%;
+    height:70px;
+    margin-top:100px;
+}
+.services{
+    width:48%;
+    height:230px;
+    border:1px solid black;
+    margin-top:25px;
+}
+#first{
+    background-image:url("./Gallery/laundry.png");
+    float:left;
+}
+#second{
+    background-image:url("./Gallery/wifi.png");
+    float:right;
+}
+#third{
+    background-image:url("./Gallery/locker.png");
+    float:left;
+}
+#fourth{
+    background-image:url("./Gallery/mini-bar.png");
+    float:right;
+}
+#fifth{
+    background-image:url("./Gallery/room.png");
+    float:left;
+}
+#sixth{
+    background-image:url("./Gallery/airport.png");
+    float:right;
+}
+#seventh{
+    background-image:url("./Gallery/renta-car.png");
+    float:left;
+}
+#eight{
+    background-image:url("./Gallery/bell.png");
+    float:right;
+}
+.spDis{
+    background-color:blue;
+    color:white;
+    width:100%;
+    height:50px;
+    margin-top:180px;
+}
+.cont{
+    margin-left:5px;
+    margin-top:5px;
+}
+#bookTable{
+    width:100%;
+    height:700px;
+    background-color:lightgray;
+    padding:15px;
+    border-radius:10px;
+}
+#reserve td{
+    width:50%;
+}
+

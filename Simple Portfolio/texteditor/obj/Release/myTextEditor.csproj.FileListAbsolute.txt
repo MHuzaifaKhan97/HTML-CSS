@@ -1,0 +1,8 @@
+C:\Users\Huzaifa\Desktop\myTextEditor\myTextEditor\bin\Release\myTextEditor.exe.config
+C:\Users\Huzaifa\Desktop\myTextEditor\myTextEditor\bin\Release\myTextEditor.exe
+C:\Users\Huzaifa\Desktop\myTextEditor\myTextEditor\bin\Release\myTextEditor.pdb
+C:\Users\Huzaifa\Desktop\myTextEditor\myTextEditor\obj\Release\myTextEditor.Form1.resources
+C:\Users\Huzaifa\Desktop\myTextEditor\myTextEditor\obj\Release\myTextEditor.Properties.Resources.resources
+C:\Users\Huzaifa\Desktop\myTextEditor\myTextEditor\obj\Release\myTextEditor.csproj.GenerateResource.Cache
+C:\Users\Huzaifa\Desktop\myTextEditor\myTextEditor\obj\Release\myTextEditor.exe
+C:\Users\Huzaifa\Desktop\myTextEditor\myTextEditor\obj\Release\myTextEditor.pdb
